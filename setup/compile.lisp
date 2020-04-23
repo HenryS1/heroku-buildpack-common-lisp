@@ -14,7 +14,7 @@
 (format t "~&  *buildpack-dir* = ~a" (make-pathname :directory *buildpack-dir*))
 
 ;;; Tell ASDF to store binaries in the cache dir.
-(ccl:setenv "XDG_CACHE_HOME" (concatenate 'string (getenv "CACHE_DIR") "/.asdf/"))
+;; (ccl:setenv "XDG_CACHE_HOME" (concatenate 'string (getenv "CACHE_DIR") "/.asdf/"))
 
 ;;; Notify ASDF that our build and cache dir is an awesome place to find asf files.
 (asdf:initialize-source-registry `(:source-registry
