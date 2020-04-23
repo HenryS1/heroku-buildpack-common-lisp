@@ -41,6 +41,4 @@
 (let ((app-file (make-pathname :directory *build-dir* :defaults "lispapp")))
   ;; note that the buildpack's bin/release refers to this application name.
   (format t "~&* create slug's ./lispapp via save-application")
-  (save-application app-file
-    :prepend-kernel t
-    :toplevel-function #'heroku-toplevel))
+  (save-lisp-and-die app-file :toplevel #'heroku-toplevel :executable t))
