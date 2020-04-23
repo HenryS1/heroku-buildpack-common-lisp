@@ -1,5 +1,8 @@
 (in-package :cl-user)
 
+(defun getenv (x)
+  (uiop:getenv x))
+
 (flet ((env-to-dirs (x)
          (pathname-directory (pathname (concatenate 'string (getenv x) "/")))))
   (defvar *build-dir* (env-to-dirs "BUILD_DIR"))
